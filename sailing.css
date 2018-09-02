@@ -22,16 +22,19 @@
   color: rgb(28, 41, 90);
   font-family: 'Indie Flower', cursive;
   font-size: 100px;
-  background: radial-gradient(farthest-side, rgba(255,255,255,1), rgba(255,255,255,0));
+  background: radial-gradient(farthest-side, rgba(255,255,255,0.7), rgba(255,255,255,0));
   border-radius: 100%;
   padding: 200px;
+  transition: 1s;
+  max-width: 80%;
+  text-align: center;
 }
 
 .banner-image-1 {
   flex: 0 1 70%;
   background-image: url("images/sailing_racing_main.jpg");
   background-size: cover;
-  opacity: 0.7;
+  opacity: 0.5;
   transition: 1s;
 }
 .banner-image-1:hover {
@@ -52,7 +55,7 @@
   background-image: url("images/sailing_management_main.png");
   background-size: cover;
   background-position: right;
-  opacity: 0.7;
+  opacity: 0.5;
   transition: 1s;
 }
 .banner-image-2:hover {
@@ -72,19 +75,20 @@
   bottom: 0;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .scroll-label {
   font-size: 25px;
-  transform: translateY(-10px);
+  transform: translateY(-30px);
   animation: iconbounce 2s infinite;
-  color: rgba(0,220,255,0.1);
+  color: rgba(28, 41, 90, 0);
 }
 
 @keyframes iconbounce {
-    50% {
-      transform: translateY(0);
-      color: rgba(0,220,255,0.20);
+    100% {
+      transform: translateY(30px);
+      color: rgba(28, 41, 90, 0.8);
       font-size: 30px;
     }
 }

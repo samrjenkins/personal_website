@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="banner">
-      <div class="banner-image-1">
+      <div id="Competitive" class="banner-image-1 main_image" data-translateX="-25vw">
         <div class="filter">
 
         </div>
@@ -16,7 +16,7 @@
       <div class="banner-content">
         <h1>SAILING</h1>
       </div>
-      <div class="banner-image-2">
+      <div id="Race Official" class="banner-image-2 main_image" data-translateX="25vw">
         <div class="filter">
 
         </div>
@@ -34,5 +34,29 @@
     <div class="gallery-panel panel">
       gallery
     </div>
+    <script>
+      // const typed = new Typed('.element', {
+      //   strings: ["First sentence.", "Second sentence."],
+      //   typeSpeed: 30
+      // });
+      function changeText(event) {
+        const title = document.querySelector("h1")
+        title.style.transform = `translateX(${this.dataset.translatex})`
+        title.innerText = this.id
+      }
+
+      function returnText(event) {
+        const title = document.querySelector("h1")
+        title.style.transform = `translateX(0)`
+        title.innerText = "SAILING"
+      }
+
+      const images = document.querySelectorAll(".main_image")
+      images.forEach(image => {
+        image.addEventListener("mouseover", changeText)
+        image.addEventListener("mouseout", returnText)
+      })
+
+    </script>
   </body>
 </html>
