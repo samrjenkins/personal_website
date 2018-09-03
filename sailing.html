@@ -8,8 +8,14 @@
   </head>
   <body>
     <div class="banner">
+      <div class="filter-2">
+
+      </div>
       <div id="Competitive" class="banner-image-1 main_image" data-translateX="-25vw">
         <div class="filter">
+
+        </div>
+         <div class="filter-2">
 
         </div>
       </div>
@@ -20,25 +26,23 @@
         <div class="filter">
 
         </div>
+        <div class="filter-2">
+
+        </div>
       </div>
       <div class="banner-foot">
         <i class="fas fa-arrow-down scroll-label"></i>
       </div>
     </div>
-    <div class="training-panel panel">
-      training
+    <div class="competitive-panel panel">
+      comp
     </div>
-    <div class="results-panel panel">
-      results
-    </div>
-    <div class="gallery-panel panel">
-      gallery
+    <div class="race-official-panel panel">
+      <div class="sub-panel commentary">Commentary</div>
+      <div class="sub-panel race-officer">Race Officer</div>
+      <div class="sub-panel umpire">Umpire</div>
     </div>
     <script>
-      // const typed = new Typed('.element', {
-      //   strings: ["First sentence.", "Second sentence."],
-      //   typeSpeed: 30
-      // });
       function changeText(event) {
         const title = document.querySelector("h1")
         title.style.transform = `translateX(${this.dataset.translatex})`
@@ -51,12 +55,20 @@
         title.innerText = "SAILING"
       }
 
+      function showPanel(event) {
+        const oldPanel = document.querySelector(".active-panel")
+        if (oldPanel) oldPanel.classList.remove("active-panel")
+        const panelCode = (this.id === "Competitive" ? "competitive" : "race-official")
+        const newPanel = document.querySelector(`.${panelCode}-panel`)
+        newPanel.classList.add("active-panel")
+      }
+
       const images = document.querySelectorAll(".main_image")
       images.forEach(image => {
         image.addEventListener("mouseover", changeText)
+        image.addEventListener("mouseover", showPanel)
         image.addEventListener("mouseout", returnText)
       })
-
     </script>
   </body>
 </html>

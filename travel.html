@@ -20,5 +20,41 @@
         <i class="fas fa-arrow-down scroll-label"></i>
       </div>
     </div>
+    <div class="wrapper">
+      <div class="panel estonia">
+        <div class="triangle"></div>
+        <div class="rectangle"></div>
+        <div class="title">ESTONIA</div>
+        <div class="filter"></div>
+        <a class="panel-link" href=""></a>
+      </div>
+      <div class="panel croatia2">
+        <div class="triangle"></div>
+        <div class="rectangle"></div>
+        <div class="title">CROATIA '18</div>
+        <div class="filter"></div>
+        <a class="panel-link" href=""></a>
+      </div>
+      <div class="panel ravenna">
+        <div class="triangle"></div>
+        <div class="rectangle"></div>
+        <div class="title">RAVENNA</div>
+        <div class="filter"></div>
+        <a class="panel-link" href=""></a>
+      </div>
+    </div>
+    <script>
+      function hideBanner(event) {
+        console.log(window.innerHeight - window.scrollY)
+        if (window.innerHeight - window.scrollY <= 400) {
+          document.querySelector(".banner").classList.add("shrink")
+          const scrollLabel = document.querySelector(".scroll-label")
+          scrollLabel.parentNode.removeChild(scrollLabel)
+        }
+
+      }
+
+      document.addEventListener("scroll", hideBanner)
+    </script>
   </body>
 </html>

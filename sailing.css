@@ -7,11 +7,19 @@
   position: relative;
 }
 
+.filter-2 {
+  background-image: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%);
+  z-index: 3;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  pointer-events: none;
+}
+
 .banner-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -75,20 +83,37 @@
   bottom: 0;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  z-index: 4;
 }
 
 .scroll-label {
   font-size: 25px;
   transform: translateY(-30px);
   animation: iconbounce 2s infinite;
-  color: rgba(28, 41, 90, 0);
+  color: rgba(28, 41, 90, 0.8);
 }
 
 @keyframes iconbounce {
     100% {
       transform: translateY(30px);
-      color: rgba(28, 41, 90, 0.8);
       font-size: 30px;
+      color: rgba(28, 41, 90, 0);
     }
+}
+
+.panel {
+  display: none;
+}
+
+.active-panel {
+  display: block !important;
+}
+
+.sub-panel {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(white 20%, rgba(28, 41, 90, 0.1), white 80%);
+  font-size: 60px;
 }
