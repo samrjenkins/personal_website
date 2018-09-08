@@ -7,69 +7,65 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   </head>
   <body>
-    <div class="banner">
-      <div class="filter-2">
-
-      </div>
-      <div id="Competitive" class="banner-image-1 main_image" data-translateX="-25vw">
-        <div class="filter">
-
+    <div class="logos">
+      <div class="logo-box">
+        <div class="grow-box">
+          <img class="logo" src="images/mcs_crest.png" data-label="Magdalen College School">
         </div>
-         <div class="filter-2">
-
+        <div class="grow-box">
+          <img class="logo" src="images/ouyc_burgee.png" data-label="Oxford University YC">
         </div>
-      </div>
-      <div class="banner-content">
-        <h1>SAILING</h1>
-      </div>
-      <div id="Race Official" class="banner-image-2 main_image" data-translateX="25vw">
-        <div class="filter">
-
+        <div class="grow-box">
+          <img class="logo" src="images/rtyc_burgee.png" data-label="Royal Thames YC">
         </div>
-        <div class="filter-2">
-
-        </div>
-      </div>
-      <div class="banner-foot">
-        <i class="fas fa-arrow-down scroll-label"></i>
       </div>
     </div>
-    <div class="competitive-panel panel">
-      comp
+    <div class="heading-box">
+      <h1 id="heading">Sailing</h1>
     </div>
-    <div class="race-official-panel panel">
-      <div class="sub-panel commentary">Commentary</div>
-      <div class="sub-panel race-officer">Race Officer</div>
-      <div class="sub-panel umpire">Umpire</div>
+    <div class="nav">
+      <div class="border-box">
+        <h2 class="left">Competitive</h2>
+        <div class="active-line-left"></div>
+      </div>
+      <div class="border-box">
+        <h2 class="right">Race Official</h2>
+        <div class="active-line-right"></div>
+      </div>
     </div>
     <script>
-      function changeText(event) {
-        const title = document.querySelector("h1")
-        title.style.transform = `translateX(${this.dataset.translatex})`
-        title.style.fontSize = "60px"
-        title.innerText = this.id
+      //Logo animation
+      const heading = document.querySelector("#heading")
+      function changeHeading() {
+        heading.classList.add("fade")
+        const image = this
+        setTimeout(function(){
+          heading.innerText = image.dataset.label
+        }, 500)
+        setTimeout(function(){
+          heading.classList.remove("fade")
+        }, 500)
       }
-
-      function returnText(event) {
-        const title = document.querySelector("h1")
-        title.style.transform = `translateX(0)`
-        title.style.fontSize = "100px"
-        title.innerText = "SAILING"
+      function returnHeading() {
+        heading.classList.add("fade")
+        const image = this
+        setTimeout(function(){ heading.innerText = "Sailing" }, 500)
+        setTimeout(function(){ heading.classList.remove("fade") }, 500)
       }
+      document.querySelectorAll("img").forEach(img => {
+        img.addEventListener("mouseover", changeHeading)
+        img.addEventListener("mouseout", returnHeading)
+      })
 
-      function showPanel(event) {
-        const oldPanel = document.querySelector(".active-panel")
-        if (oldPanel) oldPanel.classList.remove("active-panel")
-        const panelCode = (this.id === "Competitive" ? "competitive" : "race-official")
-        const newPanel = document.querySelector(`.${panelCode}-panel`)
-        newPanel.classList.add("active-panel")
-      }
-
-      const images = document.querySelectorAll(".main_image")
-      images.forEach(image => {
-        image.addEventListener("mouseover", changeText)
-        image.addEventListener("mouseover", showPanel)
-        image.addEventListener("mouseout", returnText)
+      //Nav animation
+      const boxes = document.querySelectorAll(".border-box")
+      boxes[0].addEventListener("click", () => {
+        document.querySelector(".active-line-left").style.transform = "translateX(0)"
+        document.querySelector(".active-line-right").style.transform = "translateX(-101%)"
+      })
+      boxes[1].addEventListener("click", () => {
+        document.querySelector(".active-line-left").style.transform = "translateX(101%)"
+        document.querySelector(".active-line-right").style.transform = "translateX(0)"
       })
     </script>
   </body>

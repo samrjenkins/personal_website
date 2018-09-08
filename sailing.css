@@ -1,119 +1,96 @@
-.banner {
-  /*background-image: url("images/swimming_main.png");*/
-  height: 100vh;
-  /*background-position: 50%;*/
-  /*background-size: cover*/
-  display: flex;
-  position: relative;
+h1 {
+  font-weight: lighter;
+  font-size: 60px;
+  margin-top: 24px;
 }
 
-.filter-2 {
-  background-image: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%);
-  z-index: 3;
-  width: 100%;
-  position: absolute;
-  height: 100%;
-  pointer-events: none;
-}
-
-.banner-content {
+.logos {
   display: flex;
-  align-items: center;
   justify-content: center;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  pointer-events: none;
-  z-index: 2;
 }
-.banner-content h1 {
-  color: rgb(28, 41, 90);
-  font-family: 'Indie Flower', cursive;
-  font-size: 100px;
-  background: radial-gradient(farthest-side, rgba(255,255,255,0.7), rgba(255,255,255,0));
-  border-radius: 100%;
-  padding: 200px;
-  transition: 1s;
-  max-width: 80%;
+
+.logo-box {
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.grow-box {
+  position: relative;
+  height: 120px;
+  width: 150px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+}
+
+.logo-label {
+  line-height: 1;
+}
+
+.heading-box {
   text-align: center;
 }
 
-.banner-image-1 {
-  flex: 0 1 70%;
-  background-image: url("images/sailing_racing_main.jpg");
-  background-size: cover;
-  opacity: 0.5;
-  transition: 1s;
+#heading {
+  transition: 0.5s;
 }
-.banner-image-1:hover {
+
+.fade {
+  opacity: 0;
+}
+
+img {
+  opacity: 0.4;
+  transition: 0.5s;
+  filter: grayscale(100%);
+}
+
+img:hover {
   opacity: 1;
-}
-.banner-image-1 .filter {
-  background-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%);
-  height: 100%;
+  filter: none;
+  height: 60px;
 }
 
-/*.banner-image-1 .filter:hover {
-  background-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%);
-  height: 100%;
-}*/
+.nav {
+  display: flex;
+  justify-content: center;
+}
 
-.banner-image-2 {
-  flex: 0 1 70%;
-  background-image: url("images/sailing_management_main.png");
-  background-size: cover;
-  background-position: right;
-  opacity: 0.5;
-  transition: 1s;
+.border-box {
+  border-bottom: 1px solid black;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  margin-top: 16px;
 }
-.banner-image-2:hover {
-  opacity: 1;
-}
-.banner-image-2 .filter {
-  background-image: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%);
-  height: 100%;
-}
-/*.banner-image-2 .filter:hover {
-  background-image: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%);
-}*/
 
-.banner-foot {
-  position: absolute;
+.active-line-right {
   width: 100%;
+  border-bottom: 3px solid black;
+  position: absolute;
   bottom: 0;
-  display: flex;
-  justify-content: center;
-  z-index: 4;
+  transform: translateX(-101%);
+  transition: 0.5s;
 }
 
-.scroll-label {
-  font-size: 25px;
-  transform: translateY(-30px);
-  animation: iconbounce 2s infinite;
-  color: rgba(28, 41, 90, 0.8);
+.active-line-left {
+  width: 100%;
+  border-bottom: 3px solid black;
+  position: absolute;
+  bottom: 0;
+  /*transform: translateX(101%);*/
+  transition: 0.5s;
 }
 
-@keyframes iconbounce {
-    100% {
-      transform: translateY(30px);
-      font-size: 30px;
-      color: rgba(28, 41, 90, 0);
-    }
-}
-
-.panel {
-  display: none;
-}
-
-.active-panel {
-  display: block !important;
-}
-
-.sub-panel {
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(white 20%, rgba(28, 41, 90, 0.1), white 80%);
-  font-size: 60px;
+.nav h2 {
+  font-size: 16px;
+  margin: 0 10px;
+  margin-bottom: 8px;
 }
