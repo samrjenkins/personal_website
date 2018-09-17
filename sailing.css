@@ -47,7 +47,7 @@ h1 {
 }
 
 img {
-  opacity: 0.4;
+  opacity: 0.6;
   transition: 0.5s;
   filter: grayscale(100%);
 }
@@ -61,6 +61,7 @@ img:hover {
 .nav {
   display: flex;
   justify-content: center;
+  margin-bottom: 24px;
 }
 
 .border-box {
@@ -93,4 +94,74 @@ img:hover {
   font-size: 16px;
   margin: 0 10px;
   margin-bottom: 8px;
+}
+
+.hide-accordion {
+  transform: scaleY(0);
+  overflow: hidden;
+}
+
+.container {
+  transition: 0.2s;
+  transform-origin: top;
+  position: absolute;
+}
+
+.card-header {
+  background-color: transparent;
+  text-align: center;
+  border: none;
+  margin-bottom: -16px;
+}
+
+.header-format {
+  font-size: 32px !important;
+  font-weight: lighter;
+  color: rgba(0,0,0,0.4);
+}
+
+.header-format:hover {
+  text-decoration: none;
+  color: rgba(0,0,0,0.6);
+}
+
+.header-format:focus {
+  text-decoration: none;
+}
+
+.accordion .card {
+  border: none;
+}
+
+.card-body {
+  text-align: center;
+  padding: 0;
+}
+
+.card-body h2 {
+  font-size: 20px;
+  margin-bottom: 0;
+  margin-top: 16px;
+  text-decoration: underline;
+}
+
+.card-body h3 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: lighter;
+}
+
+.card-body p {
+  margin: 0;
+}
+
+.event {
+  margin: 24px 0;
+}
+
+.collapse-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
