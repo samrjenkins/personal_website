@@ -61,7 +61,7 @@ img:hover {
 .nav {
   display: flex;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 
 .border-box {
@@ -164,4 +164,19 @@ img:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.fade-box {
+  opacity: 0.4;
+  transition: 1s;
+  margin: 0 10px;
+}
+.fade-box:hover {
+  opacity: 1;
+}
+.fade-box h2 {
+  text-align: center;
+}
+.fade-box p {
+  text-align: justify;
 }
